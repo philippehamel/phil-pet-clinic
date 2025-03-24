@@ -1,8 +1,6 @@
 package model;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,5 +14,5 @@ public class Pet {
     private PetType pettype;
     private Owner owner;
     private LocalDate birthday;
-    private Set<Visit> visits = new HashSet<>();
+    //private Set<Visit> visits = new HashSet<>();
 }
