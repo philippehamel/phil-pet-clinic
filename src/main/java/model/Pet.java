@@ -5,10 +5,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
+@NoArgsConstructor
 public class Pet {
     private String name;
     private PetType pettype;
