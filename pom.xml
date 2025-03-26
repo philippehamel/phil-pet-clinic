@@ -4,7 +4,7 @@
 
 	<groupId>com.phil.training</groupId>
 	<artifactId>phil-pet-clinic</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>yes</version>
 
 	<modules>
 		<module>pet-clinic-data</module>
@@ -55,6 +55,7 @@
 
 	<scm>
 		<developerConnection>scm:git:git@github.com:philippehamel/phil-pet-clinic.git</developerConnection>
-	</scm>
+	  <tag>true</tag>
+  </scm>
 
 </project>
