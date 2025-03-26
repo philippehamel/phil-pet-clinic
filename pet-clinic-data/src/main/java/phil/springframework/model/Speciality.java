@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class Speciality {
+public class Speciality extends BaseEntity{
     private String description;
 }
