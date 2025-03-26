@@ -1,4 +1,4 @@
-package model;
+package phil.springframework.model;
 
 import java.time.LocalDate;
 
