@@ -4,7 +4,7 @@
 
 	<groupId>com.phil.training</groupId>
 	<artifactId>phil-pet-clinic</artifactId>
-	<version>yes</version>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<modules>
 		<module>pet-clinic-data</module>

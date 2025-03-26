@@ -3,7 +3,7 @@
     <parent>
         <artifactId>phil-pet-clinic</artifactId>
         <groupId>com.phil.training</groupId>
-        <version>yes</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
