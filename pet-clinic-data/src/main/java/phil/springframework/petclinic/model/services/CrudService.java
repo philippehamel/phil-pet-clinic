@@ -1,4 +1,4 @@
-package phil.springframework.services;
+package phil.springframework.petclinic.model.services;
 
 import java.util.Set;
 

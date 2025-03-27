@@ -1,8 +1,7 @@
-package phil.springframework.services.map;
+package phil.springframework.petclinic.model.services.map;
 
-import phil.springframework.model.Vet;
-import phil.springframework.services.CrudService;
-import phil.springframework.services.VetService;
+import phil.springframework.petclinic.model.Vet;
+import phil.springframework.petclinic.model.services.CrudService;
 
 import java.util.Set;
 

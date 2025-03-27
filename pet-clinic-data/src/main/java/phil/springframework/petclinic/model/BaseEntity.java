@@ -1,4 +1,4 @@
-package phil.springframework.model;
+package phil.springframework.petclinic.model;
 
 import lombok.Getter;
 import lombok.Setter;

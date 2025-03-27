@@ -1,10 +1,10 @@
-package phil.springframework.model;
-
-import java.time.LocalDate;
+package phil.springframework.petclinic.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 
 @Setter
 @Getter
