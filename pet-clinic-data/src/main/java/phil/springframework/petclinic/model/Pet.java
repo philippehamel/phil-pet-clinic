@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Pet extends BaseEntity{
     private String name;
-    private PetType pettype;
+    private PetType petType;
     private Owner owner;
     private LocalDate birthday;
     //private Set<Visit> visits = new HashSet<>();
