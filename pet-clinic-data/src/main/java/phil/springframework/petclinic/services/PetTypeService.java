@@ -1,7 +1,7 @@
 package phil.springframework.petclinic.services;
 
-import phil.springframework.petclinic.model.Pet;
+import phil.springframework.petclinic.model.PetType;
 
-public interface PetService extends CrudService<Pet, Long>{
+public interface PetTypeService extends CrudService<PetType, Long>{
 
 }
