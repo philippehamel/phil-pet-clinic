@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import phil.springframework.petclinic.model.*;
 import phil.springframework.petclinic.services.OwnerService;
 import phil.springframework.petclinic.services.PetTypeService;
-import phil.springframework.petclinic.services.SpecialtyService;
+import phil.springframework.petclinic.services.SpecialityService;
 import phil.springframework.petclinic.services.VetService;
 
 import java.time.LocalDate;
@@ -16,12 +16,12 @@ public class DataInitializer implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
-    private final SpecialtyService specialityService;
+    private final SpecialityService specialityService;
 
     public DataInitializer(OwnerService ownerService,
                            VetService vetService,
                            PetTypeService petTypeService,
-                           SpecialtyService specialityService) {
+                           SpecialityService specialityService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
