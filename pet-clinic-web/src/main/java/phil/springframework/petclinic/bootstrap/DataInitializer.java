@@ -28,9 +28,7 @@ public class DataInitializer implements CommandLineRunner {
         this.specialityService = specialityService;
     }
 
-
-    @Override
-    public void run(String... args) throws Exception {
+    private void loadData() {
 
         PetType dog = new PetType();
         dog.setName("Dog");
@@ -97,5 +95,19 @@ public class DataInitializer implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Loaded Vets...");
+
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+
+        int count = petTypeService.findAll().size();
+        if (count == 0) {
+            System.out.println("Loading data...");
+            loadData();
+        } else {
+            System.out.println("Data already loaded...");
+        }
+
     }
 }
