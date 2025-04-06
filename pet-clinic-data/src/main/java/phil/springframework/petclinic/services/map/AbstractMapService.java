@@ -1,4 +1,4 @@
-package phil.springframework.petclinic.model.services.map;
+package phil.springframework.petclinic.services.map;
 
 import phil.springframework.petclinic.model.BaseEntity;
 

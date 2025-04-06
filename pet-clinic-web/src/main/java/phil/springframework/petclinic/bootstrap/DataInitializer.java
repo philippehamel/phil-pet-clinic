@@ -4,8 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import phil.springframework.petclinic.model.Owner;
 import phil.springframework.petclinic.model.Vet;
-import phil.springframework.petclinic.model.services.OwnerService;
-import phil.springframework.petclinic.model.services.VetService;
+import phil.springframework.petclinic.services.OwnerService;
+import phil.springframework.petclinic.services.VetService;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
