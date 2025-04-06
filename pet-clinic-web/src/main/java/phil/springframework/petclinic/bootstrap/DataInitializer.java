@@ -2,12 +2,10 @@ package phil.springframework.petclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import phil.springframework.petclinic.model.Owner;
-import phil.springframework.petclinic.model.Pet;
-import phil.springframework.petclinic.model.PetType;
-import phil.springframework.petclinic.model.Vet;
+import phil.springframework.petclinic.model.*;
 import phil.springframework.petclinic.services.OwnerService;
 import phil.springframework.petclinic.services.PetTypeService;
+import phil.springframework.petclinic.services.SpecialtyService;
 import phil.springframework.petclinic.services.VetService;
 
 import java.time.LocalDate;
@@ -18,11 +16,16 @@ public class DataInitializer implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialtyService specialityService;
 
-    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataInitializer(OwnerService ownerService,
+                           VetService vetService,
+                           PetTypeService petTypeService,
+                           SpecialtyService specialityService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialityService = specialityService;
     }
 
 
@@ -38,6 +41,17 @@ public class DataInitializer implements CommandLineRunner {
         petTypeService.save(cat);
 
         System.out.println("Loaded Pet Types...");
+
+        Speciality radiology = new Speciality();
+        radiology.setDescription("Radiology");
+
+        Speciality surgery = new Speciality();
+        surgery.setDescription("Surgery");
+
+        Speciality dentistry = new Speciality();
+        dentistry.setDescription("Dentistry");
+
+        System.out.println("Loaded Specialities...");
 
         Owner owner1 = new Owner();
         owner1.setFirstName("John");
@@ -72,11 +86,14 @@ public class DataInitializer implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Dr. Mike");
         vet1.setLastName("Johnson");
+        vet1.getSpecialities().add(surgery);
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Dr. Sarah");
         vet2.setLastName("Williams");
+        vet2.getSpecialities().add(radiology);
+        vet2.getSpecialities().add(dentistry);
         vetService.save(vet2);
 
         System.out.println("Loaded Vets...");
