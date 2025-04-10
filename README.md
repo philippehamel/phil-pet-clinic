@@ -6,6 +6,7 @@ my version of the pet clinic training project
 ## stack
 - Spring Boot
 - Maven
+- JPA/Hibernate
 
 ## run
 ```bash
