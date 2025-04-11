@@ -1,16 +1,15 @@
 package phil.springframework.petclinic.services.springdatajpa;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-
 import phil.springframework.petclinic.model.Owner;
 import phil.springframework.petclinic.repository.OwnerRepository;
 import phil.springframework.petclinic.repository.PetRepository;
 import phil.springframework.petclinic.repository.PetTypeRepository;
 import phil.springframework.petclinic.services.OwnerService;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
