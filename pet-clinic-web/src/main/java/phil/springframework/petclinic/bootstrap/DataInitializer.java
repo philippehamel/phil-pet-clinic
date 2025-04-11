@@ -3,29 +3,29 @@ package phil.springframework.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import phil.springframework.petclinic.model.*;
-import phil.springframework.petclinic.services.OwnerService;
-import phil.springframework.petclinic.services.PetTypeService;
-import phil.springframework.petclinic.services.SpecialityService;
-import phil.springframework.petclinic.services.VetService;
+import phil.springframework.petclinic.services.*;
 
 import java.time.LocalDate;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
-    // This class is used to load initial data into the application
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     public DataInitializer(OwnerService ownerService,
                            VetService vetService,
                            PetTypeService petTypeService,
-                           SpecialityService specialityService) {
+                           SpecialityService specialityService,
+                           VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
+
     }
 
     private void loadData() {
@@ -42,12 +42,15 @@ public class DataInitializer implements CommandLineRunner {
 
         Speciality radiology = new Speciality();
         radiology.setDescription("Radiology");
+        specialityService.save(radiology);
 
         Speciality surgery = new Speciality();
         surgery.setDescription("Surgery");
+        specialityService.save(surgery);
 
         Speciality dentistry = new Speciality();
         dentistry.setDescription("Dentistry");
+        specialityService.save(dentistry);
 
         System.out.println("Loaded Specialities...");
 
@@ -64,6 +67,8 @@ public class DataInitializer implements CommandLineRunner {
         johnsPet.setOwner(owner1);
         johnsPet.setName("Buddy");
         johnsPet.setBirthday(LocalDate.now());
+        owner1.getPets().add(johnsPet);
+        ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Jane");
@@ -78,6 +83,8 @@ public class DataInitializer implements CommandLineRunner {
         janesPet.setOwner(owner2);
         janesPet.setName("Whiskers");
         janesPet.setBirthday(LocalDate.now());
+        owner2.getPets().add(janesPet);
+        ownerService.save(owner2);
 
         System.out.println("Loaded Owners...");
 
@@ -96,6 +103,21 @@ public class DataInitializer implements CommandLineRunner {
 
         System.out.println("Loaded Vets...");
 
+        Visit catVisit = new Visit();
+        catVisit.setPet(janesPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Checkup");
+        visitService.save(catVisit);
+
+        Visit dogVisit = new Visit();
+        dogVisit.setPet(johnsPet);
+        dogVisit.setDate(LocalDate.now());
+        dogVisit.setDescription("Checkup");
+        visitService.save(dogVisit);
+
+        System.out.println("Loaded Visits...");
+
+        System.out.println("Data loading complete.");
     }
 
     @Override
