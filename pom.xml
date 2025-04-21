@@ -48,8 +48,7 @@
                 <version>3.5.2</version>
                 <configuration>
                     <argLine>
-                        --add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
-                        --add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
+                        --add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
                     </argLine>
                 </configuration>
             </plugin>
