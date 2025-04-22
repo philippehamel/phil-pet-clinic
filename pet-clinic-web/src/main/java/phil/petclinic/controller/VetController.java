@@ -14,7 +14,7 @@ public class VetController {
         VetService = vetService;
     }
 
-    @RequestMapping({"/index","/index.html"})
+    @RequestMapping({"", "/","/index","/index.html"})
     public String listVets(Model model){
         model.addAttribute("vets", VetService.findAll());
         return "vets/index";
