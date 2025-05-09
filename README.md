@@ -7,6 +7,7 @@ my version of the pet clinic training project
 - Spring Boot
 - Maven
 - JPA/Hibernate
+- Thymeleaf
 
 ## run
 ```bash
