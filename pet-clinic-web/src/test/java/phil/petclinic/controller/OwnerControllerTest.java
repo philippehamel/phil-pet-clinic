@@ -76,4 +76,16 @@ class OwnerControllerTest {
 
         verifyNoInteractions(ownerService);
     }
+
+    @Test
+    void displayOwner() throws Exception {
+        Owner owner = Owner.builder().id(1L).lastName("Fred").build();
+        when(ownerService.findById(1L)).thenReturn(owner);
+
+        mockMvc.perform(get("/owners/1"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("owners/ownerDetails"))
+                .andExpect(model().attributeExists("owner"))
+                .andExpect(model().attribute("owner", owner));
+    }
 }
