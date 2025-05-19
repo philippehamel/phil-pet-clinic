@@ -2,19 +2,8 @@ package phil.petclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import phil.petclinic.model.Owner;
-import phil.petclinic.model.Pet;
-import phil.petclinic.model.PetType;
-import phil.petclinic.model.Speciality;
-import phil.petclinic.model.Vet;
-import phil.petclinic.model.Visit;
 import phil.petclinic.model.*;
-import phil.petclinic.service.OwnerService;
-import phil.petclinic.service.PetTypeService;
-import phil.petclinic.service.SpecialityService;
-import phil.petclinic.service.VetService;
-import phil.petclinic.service.VisitService;
+import phil.petclinic.service.*;
 
 import java.time.LocalDate;
 
@@ -76,7 +65,7 @@ public class DataInitializer implements CommandLineRunner {
         johnsPet.setPetType(dog);
         johnsPet.setOwner(owner1);
         johnsPet.setName("Buddy");
-        johnsPet.setBirthday(LocalDate.now());
+        johnsPet.setBirthDate(LocalDate.now());
         owner1.getPets().add(johnsPet);
         ownerService.save(owner1);
 
@@ -91,7 +80,7 @@ public class DataInitializer implements CommandLineRunner {
         janesPet.setPetType(cat);
         janesPet.setOwner(owner2);
         janesPet.setName("Whiskers");
-        janesPet.setBirthday(LocalDate.now());
+        janesPet.setBirthDate(LocalDate.now());
         owner2.getPets().add(janesPet);
         ownerService.save(owner2);
 
