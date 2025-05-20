@@ -1,20 +1,19 @@
 package phil.petclinic.service.map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import phil.petclinic.model.Owner;
 
 import java.util.Set;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import phil.petclinic.model.Owner;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class OwnerServiceMapTest {
 
-    OwnerServiceMap ownerServiceMap;
     final Long ownerId = 1L;
     final String lastName = "Vigneault";
+    OwnerServiceMap ownerServiceMap;
 
     @BeforeEach
     void setUp() {

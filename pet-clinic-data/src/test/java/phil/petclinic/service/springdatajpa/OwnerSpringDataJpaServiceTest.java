@@ -1,29 +1,24 @@
 package phil.petclinic.service.springdatajpa;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import phil.petclinic.model.Owner;
 import phil.petclinic.repository.OwnerRepository;
 import phil.petclinic.repository.PetRepository;
 import phil.petclinic.repository.PetTypeRepository;
+
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class OwnerSpringDataJpaServiceTest {
@@ -45,7 +40,7 @@ class OwnerSpringDataJpaServiceTest {
 
     @BeforeEach
     void setUp() {
-        returnOwner = Owner.builder().id(1l).lastName(LAST_NAME).build();
+        returnOwner = Owner.builder().id(1L).lastName(LAST_NAME).build();
     }
 
     @Test
@@ -60,8 +55,8 @@ class OwnerSpringDataJpaServiceTest {
     @Test
     void findAll() {
         Set<Owner> returnOwnersSet = new HashSet<>();
-        returnOwnersSet.add(Owner.builder().id(1l).build());
-        returnOwnersSet.add(Owner.builder().id(2l).build());
+        returnOwnersSet.add(Owner.builder().id(1L).build());
+        returnOwnersSet.add(Owner.builder().id(2L).build());
         when(ownerRepository.findAll()).thenReturn(returnOwnersSet);
         Set<Owner> owners = service.findAll();
 

@@ -42,5 +42,4 @@ public class Pet extends BaseEntity {
             this.visits = visits;
         }
     }
-
 }
